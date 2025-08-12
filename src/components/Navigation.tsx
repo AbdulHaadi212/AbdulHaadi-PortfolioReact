@@ -15,57 +15,58 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import '../assets/styles/Navbar.scss';
+
 
 const drawerWidth = 240;
-const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
+const navItems = [
+  ['Experience', 'timeline'],
+  ['About', 'expertise'],
+  ['Education', 'project'],
+  ['Contact', 'contact']
+];
 
-function Navigation({parentToChild, modeChange}: any) {
+interface NavigationProps { 
+  mode: 'dark' | 'light';
+  modeChange: () => void;
+}
 
-  const {mode} = parentToChild;
-
+const Navigation: React.FC<NavigationProps> = ({ mode, modeChange }) => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen(prev => !prev);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById("navigation");
       if (navbar) {
-        const scrolled = window.scrollY > navbar.clientHeight;
-        setScrolled(scrolled);
+        setScrolled(window.scrollY > navbar.clientHeight);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section)
-    const expertiseElement = document.getElementById(section);
-    if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('Scrolling to:', expertiseElement);  // Debugging: Ensure the element is found
-    } else {
-      console.error('Element with id "expertise" not found');  // Debugging: Log error if element is not found
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const drawer = (
     <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <p className="mobile-menu-top"><ListIcon/>Menu</p>
+      <p className="mobile-menu-top"><ListIcon />Menu</p>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => scrollToSection(item[1])}>
-              <ListItemText primary={item[0]} />
+        {navItems.map(([label, id]) => (
+          <ListItem key={label} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => scrollToSection(id)}>
+              <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -88,14 +89,14 @@ function Navigation({parentToChild, modeChange}: any) {
             <MenuIcon />
           </IconButton>
           {mode === 'dark' ? (
-            <LightModeIcon onClick={() => modeChange()}/>
+            <LightModeIcon onClick={modeChange} sx={{ cursor: 'pointer' }} />
           ) : (
-            <DarkModeIcon onClick={() => modeChange()}/>
+            <DarkModeIcon onClick={modeChange} sx={{ cursor: 'pointer' }} />
           )}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
-                {item[0]}
+            {navItems.map(([label, id]) => (
+              <Button key={label} onClick={() => scrollToSection(id)} sx={{ color: '#fff' }}>
+                {label}
               </Button>
             ))}
           </Box>
@@ -106,12 +107,10 @@ function Navigation({parentToChild, modeChange}: any) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
           }}
         >
           {drawer}
@@ -119,6 +118,6 @@ function Navigation({parentToChild, modeChange}: any) {
       </nav>
     </Box>
   );
-}
+};
 
 export default Navigation;

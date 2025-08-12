@@ -1,91 +1,30 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
-import Chip from '@mui/material/Chip';
-import '../assets/styles/Expertise.scss';
+import "../assets/styles/Expertise.scss";
 
-const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
-];
+const About: React.FC = () => {
+  return (
+    <section className="about-section" id="expertise">
+      <div className="about-container">
+        <div className="about-text">
+          <h2>About Me</h2>
+          <p>
+            I’m Abdul Haadi, a passionate full-stack developer who turns ideas into fast, responsive, and visually stunning digital experiences.
 
-const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
-];
+            I thrive on crafting modern web applications that don’t just work flawlessly but also feel intuitive and engaging to use. From pixel-perfect front-end designs to efficient back-end architectures, I love blending creativity with clean, scalable code.
 
-const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
-];
+            When I’m not coding, you’ll find me exploring emerging tech trends, experimenting with new frameworks, or fine-tuning my skills to stay ahead in the ever-evolving world of development.
 
-function Expertise() {
-    return (
-    <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+            If you’re looking for innovation, reliability, and a dash of creativity, let’s make something amazing together!
 
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
 
-                <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsThird.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-            </div>
+          </p>
+          <a href="#contact" className="cta-btn">
+            Let’s Connect
+          </a>
         </div>
-    </div>
-    );
-}
+      </div>
+    </section>
+  );
+};
 
-export default Expertise;
+export default About;

@@ -1,0 +1,133 @@
+/* Navbar SCSS */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a2e; /* Dark blue-ish background */
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    color: #f0a500; /* Accent color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: #f0a500;
+        outline: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #f0a500;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        width: 100%;
+      }
+    }
+  }
+
+  /* Hamburger menu button (hidden on desktop) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 26px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1100;
+
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+
+    .nav-links {
+      position: fixed;
+      top: 60px; /* height of navbar */
+      right: 0;
+      height: calc(100vh - 60px);
+      width: 220px;
+      background-color: #1a1a2e;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+
+      a {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Show nav-links when active */
+    &.nav-open {
+      .nav-links {
+        transform: translateX(0);
+      }
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+}
+
+/* Tablet landscape breakpoint */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.6rem 1rem;
+
+    .logo {
+      font-size: 1.3rem;
+    }
+
+    .nav-links a {
+      font-size: 1rem;
+    }
+  }
+}

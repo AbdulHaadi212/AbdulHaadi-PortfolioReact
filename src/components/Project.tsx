@@ -1,74 +1,136 @@
 import React from "react";
-import mock01 from '../assets/images/mock01.png';
-import mock02 from '../assets/images/mock02.png';
-import mock03 from '../assets/images/mock03.png';
-import mock04 from '../assets/images/mock04.png';
-import mock05 from '../assets/images/mock05.png';
-import mock06 from '../assets/images/mock06.png';
-import mock07 from '../assets/images/mock07.png';
-import mock08 from '../assets/images/mock08.png';
-import mock09 from '../assets/images/mock09.png';
-import mock10 from '../assets/images/mock10.png';
-import '../assets/styles/Project.scss';
 
-function Project() {
-    return(
-    <div className="projects-container" id="projects">
-        <h1>Personal Projects</h1>
-        <div className="projects-grid">
-            <div className="project">
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><h2>Filmate AI</h2></a>
-                <p>Developed movie finder app with semantic search and sentiment analysis using OpenAI GPT-3.5 Turbo, Qdrant, React, and Flask.</p>
-            </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>High Speed Chase</h2></a>
-                <p>Designed, developed, and launched a 3D multiplayer racing game with C# and Unity. This is available on Itch.io for gamers worldwide to enjoy.</p>
-            </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><h2>Astro Raiders</h2></a>
-                <p>Developed and released a 2D shooting game with C# and Unity. This project is hosted on the Itch.io public marketplace.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><h2>Datum: Integrated Learning Platform</h2></a>
-                <p>This is an online educational platform that provides high-quality, data science-focused learning resources in the Japanese language. I created the entire platform from scratch using Ruby on Rails.</p>
-            </div>
-            <div className="project">
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><h2>WeManage: Real Estate Asset Management</h2></a>
-                <p>This mobile application allows realtors in Japan to securely manage their property information and view future income predictions. This app is built with Ruby on Rails and JavaScript.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><img src={mock05} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><h2>COVID-19 Case Management</h2></a>
-                <p>Built official charts for COVID/vaccination tracking for an educational institution using JavaScript and the Google Sheets API v4. The dashboard served the university's leadership in their decision-making processes.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><h2>Multiple Regression Property Analysis</h2></a>
-                <p>Analyzed the real estate market in Japan and predicted property prices by implementing statistical methods such as OLS and multi-regression analysis. This project leveraged Python and various libraries such as Pandas, NumPy, Matplotlib, and Scikit-Learn.</p>
-            </div>
-            <div className="project">
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><img src={mock03} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><h2>Programs of Study</h2></a>
-                <p>Designed and developed a custom component for a CMS-based platform (e.g., 'Brightspot') using Java, Handlebars, and LESS. University students can find their majors of interest through this module.</p>
-            </div>
-            <div className="project">
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><img src={mock02} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><h2>Transfer Evaluation Matrix</h2></a>
-                <p>Created an interactive CSV table generator with Java, Handlebars, and LESS. This project helps transfer students to quickly identify eligible credits.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><img src={mock01} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><h2>Submeowrine</h2></a>
-                <p>Developed and released an Android mobile application using Java and Android Studio that runs a 2D shooting game.</p>
-            </div>
-        </div>
-    </div>
-    );
-}
+type EducationItem = {
+  degree: string;
+  institution: string;
+  startYear: string;
+  endYear: string;
+  details?: string;
+};
 
-export default Project;
+const educationData: EducationItem[] = [
+  {
+    degree: "Bachelor of Software Engineering",
+    institution: "Sir Syed University of Engineering & Technology (SSUET)",
+    startYear: "Oct 2022",
+    endYear: "Jul 2026",
+    details: "Undergraduate Software Engineer (SSUET'26)",
+  },
+  {
+    degree: "Fsc, Pre-Engineering",
+    institution: "NCR-CET College",
+    startYear: "Jul 2020",
+    endYear: "Jun 2022",
+    details: "Intermediate",
+  },
+  {
+    degree: "Ssc, Computer Science",
+    institution: "Al Badr Higher Secondary School",
+    startYear: "Apr 2014",
+    endYear: "Jul 2020",
+    details: "Matriculation",
+  },
+  {
+    degree: "Hifz ul Quran",
+    institution: "Mahd Zaid Bin Sabit",
+    startYear: "Feb 2012",
+    endYear: "Feb 2014",
+    details: "Wifaq ul Madaris AlArabia",
+  },
+  // Add more education items here...
+];
+
+const Education: React.FC = () => {
+  return (
+    <section id="project" style={{ padding: "60px 20px", backgroundColor: "#f5f7fa" }}>
+      <h2 style={{
+        textAlign: "center",
+        fontSize: "2.5rem",
+        marginBottom: "40px",
+        color: "#34495e",
+        fontWeight: "700",
+        textTransform: "uppercase",
+        letterSpacing: "2px",
+      }}>
+        Education
+      </h2>
+
+      <div style={{
+        maxWidth: "700px",
+        margin: "0 auto",
+        position: "relative",
+        paddingLeft: "30px",
+        borderLeft: "4px solid #3498db",
+      }}>
+        {educationData.map((item, index) => (
+          <div
+            key={index}
+            style={{
+              position: "relative",
+              marginBottom: "40px",
+              paddingLeft: "20px",
+              animation: `fadeInUp 0.6s ease forwards`,
+              animationDelay: `${index * 0.2}s`,
+              opacity: 0,
+            }}
+          >
+            {/* Circle marker */}
+            <div style={{
+              position: "absolute",
+              left: "-14px",
+              top: "5px",
+              width: "20px",
+              height: "20px",
+              backgroundColor: "#3498db",
+              borderRadius: "50%",
+              border: "4px solid #fff",
+              boxShadow: "0 0 8px rgba(52, 152, 219, 0.6)",
+            }} />
+
+            <h3 style={{ margin: "0 0 5px 0", color: "#2c3e50" }}>{item.degree}</h3>
+            <h4 style={{ margin: "0 0 5px 0", color: "#7f8c8d", fontWeight: "600" }}>{item.institution}</h4>
+            <span style={{ fontSize: "0.9rem", color: "#95a5a6" }}>
+              {item.startYear} — {item.endYear}
+            </span>
+            {item.details && (
+              <p style={{ marginTop: "10px", color: "#34495e", lineHeight: "1.5" }}>
+                {item.details}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Simple fadeInUp animation */}
+      <style>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 768px) {
+          section#education {
+            padding: 40px 10px;
+          }
+          div[style*="border-left"] {
+            padding-left: 20px !important;
+            border-left-width: 3px !important;
+          }
+          div[style*="width: 20px"] {
+            width: 15px !important;
+            height: 15px !important;
+            left: -11px !important;
+          }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default Education;
