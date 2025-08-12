@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/react-portfolio-template/static/css/main.b0e732dd.css",
+    "main.js": "/react-portfolio-template/static/js/main.9849c237.js",
+    "static/js/453.b05d8aa5.chunk.js": "/react-portfolio-template/static/js/453.b05d8aa5.chunk.js",
+    "static/media/Movie1.png": "/react-portfolio-template/static/media/Movie1.ac5e68aeea073f49e7dd.png",
+    "static/media/image2.png": "/react-portfolio-template/static/media/image2.6f5fe242fe566473a5fa.png",
+    "static/media/background.jpg": "/react-portfolio-template/static/media/background.8d6857e9f4ba3f979f84.jpg",
+    "static/media/image1.png": "/react-portfolio-template/static/media/image1.f93d7cb293e5d4176cb8.png",
+    "static/media/bg-light.png": "/react-portfolio-template/static/media/bg-light.bac0efb485244a522981.png",
+    "static/media/image3.png": "/react-portfolio-template/static/media/image3.dab44da43d63a9d4d177.png",
+    "static/media/AI2.jpg": "/react-portfolio-template/static/media/AI2.7954b68d469e0108989f.jpg",
+    "static/media/Insta2.png": "/react-portfolio-template/static/media/Insta2.d9eeafbb65cfc8f92852.png",
+    "static/media/AI1.jpg": "/react-portfolio-template/static/media/AI1.e09aa05f7f6cf50cbd22.jpg",
+    "static/media/WhatsApp Image 2023-07-20 at 16.22.47.jpg": "/react-portfolio-template/static/media/WhatsApp Image 2023-07-20 at 16.22.47.c764c3be7e5af4edd69c.jpg",
+    "static/media/Insta3.png": "/react-portfolio-template/static/media/Insta3.a7d3aa1a0e5f209ba499.png",
+    "static/media/movie4.png": "/react-portfolio-template/static/media/movie4.9c684dc2d3518a3ddb9e.png",
+    "static/media/image4.png": "/react-portfolio-template/static/media/image4.13078fac317d58684ec2.png",
+    "static/media/Movie2.png": "/react-portfolio-template/static/media/Movie2.b461a1a072c7b79d9d68.png",
+    "static/media/Insta1.png": "/react-portfolio-template/static/media/Insta1.373ca41f42edab481a66.png",
+    "static/media/image6.png": "/react-portfolio-template/static/media/image6.01cea8972dd0b6e6144b.png",
+    "static/media/Chat1.jpg": "/react-portfolio-template/static/media/Chat1.93d4938009e4a7321033.jpg",
+    "static/media/Cricket3.jpg": "/react-portfolio-template/static/media/Cricket3.55262c0c04a2c5b0ef19.jpg",
+    "static/media/Cricket2.jpg": "/react-portfolio-template/static/media/Cricket2.dcebdcedffc7fa938256.jpg",
+    "static/media/image5.png": "/react-portfolio-template/static/media/image5.2bb9eda84a0ecd359b89.png",
+    "static/media/Cricket1.jpg": "/react-portfolio-template/static/media/Cricket1.592d55b76d4a9cab81f9.jpg",
+    "static/media/Chat3.jpg": "/react-portfolio-template/static/media/Chat3.6d7eba01db5a1f9b1541.jpg",
+    "static/media/AI3.jpg": "/react-portfolio-template/static/media/AI3.b4f66632d3ad0b56e23f.jpg",
+    "static/media/AI6.jpg": "/react-portfolio-template/static/media/AI6.04a920fdbf208f92cd2c.jpg",
+    "static/media/AI5.jpg": "/react-portfolio-template/static/media/AI5.680f2c3298f51f7ddbcd.jpg",
+    "static/media/Chat2.jpg": "/react-portfolio-template/static/media/Chat2.6968f385d26d83d4f09c.jpg",
+    "static/media/AI4.jpg": "/react-portfolio-template/static/media/AI4.900f07914a99ee1a163d.jpg",
+    "index.html": "/react-portfolio-template/index.html",
+    "main.b0e732dd.css.map": "/react-portfolio-template/static/css/main.b0e732dd.css.map",
+    "main.9849c237.js.map": "/react-portfolio-template/static/js/main.9849c237.js.map",
+    "453.b05d8aa5.chunk.js.map": "/react-portfolio-template/static/js/453.b05d8aa5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0e732dd.css",
+    "static/js/main.9849c237.js"
+  ]
+}
