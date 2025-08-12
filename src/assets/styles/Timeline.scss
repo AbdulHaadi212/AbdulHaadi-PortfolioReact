@@ -1,38 +1,38 @@
-.vertical-timeline span {
+.vertical-timeline {
+  span {
     color: white;
     font-family: 'Courier Prime', monospace;
-}
+  }
 
-.vertical-timeline p {
+  p {
     color: rgb(39, 40, 34);
+  }
 }
 
-.vertical-timeline-element p {
+.vertical-timeline-element {
+  p,
+  h3,
+  h4,
+  span {
     color: rgb(39, 40, 34);
-}
+  }
 
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
+  .vertical-timeline-element-date {
+    color: white; // Always white, even on mobile
+  }
 }
 
 .svg-inline--fa {
-    color: white;
+  color: white;
 }
 
+// Optional: If you want different colors for smaller screens, uncomment below
+/*
 @media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+  .vertical-timeline-element {
+    .vertical-timeline-element-date {
+      color: rgb(39, 40, 34);
     }
+  }
 }
+*/

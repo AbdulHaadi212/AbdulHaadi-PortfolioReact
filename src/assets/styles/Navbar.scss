@@ -1,10 +1,9 @@
-/* Navbar SCSS */
-
+/* Navbar SCSS — Improved & Mobile Optimized */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1a1a2e; /* Dark blue-ish background */
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
   padding: 0.75rem 1.5rem;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,15 +11,21 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
 
   .logo {
     font-size: 1.5rem;
     font-weight: 700;
     cursor: pointer;
     user-select: none;
-    color: #f0a500; /* Accent color */
+    color: #f0a500;
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   .nav-links {
@@ -59,7 +64,7 @@
     }
   }
 
-  /* Hamburger menu button (hidden on desktop) */
+  /* Hamburger menu */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -68,6 +73,7 @@
     height: 22px;
     cursor: pointer;
     z-index: 1100;
+    -webkit-tap-highlight-color: transparent; // smoother on mobile
 
     span {
       width: 100%;
@@ -79,18 +85,18 @@
   }
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 @media (max-width: 900px) {
   .navbar {
     padding: 0.75rem 1rem;
 
     .nav-links {
       position: fixed;
-      top: 60px; /* height of navbar */
+      top: 60px;
       right: 0;
       height: calc(100vh - 60px);
-      width: 220px;
-      background-color: #1a1a2e;
+      width: 240px;
+      background: linear-gradient(180deg, #1a1a2e, #0f0f17);
       flex-direction: column;
       gap: 1.2rem;
       padding: 1.5rem;
@@ -98,17 +104,15 @@
       transition: transform 0.3s ease;
       box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
 
       a {
         font-size: 1.1rem;
       }
     }
 
-    /* Show nav-links when active */
-    &.nav-open {
-      .nav-links {
-        transform: translateX(0);
-      }
+    &.nav-open .nav-links {
+      transform: translateX(0);
     }
 
     .hamburger {
@@ -117,7 +121,7 @@
   }
 }
 
-/* Tablet landscape breakpoint */
+/* Small Screens */
 @media (max-width: 600px) {
   .navbar {
     padding: 0.6rem 1rem;
