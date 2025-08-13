@@ -17,22 +17,13 @@
     color: rgb(39, 40, 34);
   }
 
+  /* Force date color to #ff6600 and override any inline or responsive styles */
   .vertical-timeline-element-date {
-    color: white; // Always white, even on mobile
+    color: #ff6600 !important;
+    font-weight: bold;
   }
 }
 
 .svg-inline--fa {
   color: white;
 }
-
-// Optional: If you want different colors for smaller screens, uncomment below
-/*
-@media screen and (max-width: 1170px) {
-  .vertical-timeline-element {
-    .vertical-timeline-element-date {
-      color: rgb(39, 40, 34);
-    }
-  }
-}
-*/

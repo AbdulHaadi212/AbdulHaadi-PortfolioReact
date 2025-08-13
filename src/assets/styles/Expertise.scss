@@ -6,62 +6,9 @@
   text-align: center;
   min-height: 100vh;
   transition: background 0.3s ease, color 0.3s ease;
-
-  /* Light Mode */
-  @media (prefers-color-scheme: light) {
-    background: linear-gradient(120deg, #ffffff, #f5f5f5);
-    color: #222;
-
-    h2 {
-      color: #333;
-    }
-
-    p {
-      color: #555;
-    }
-
-    .highlight {
-      color: #6c63ff;
-      font-weight: 700;
-    }
-
-    .cta-btn {
-      background: #6c63ff;
-      color: white;
-
-      &:hover {
-        background: #5848d6;
-      }
-    }
-  }
-
-  /* Dark Mode */
-  @media (prefers-color-scheme: dark) {
-    background: linear-gradient(120deg, #0f0f17, #1f1f2e);
-    color: #f5f5f5;
-
-    h2 {
-      color: #ffffff;
-    }
-
-    p {
-      color: #cccccc;
-    }
-
-    .highlight {
-      color: #ffb84d;
-      font-weight: 700;
-    }
-
-    .cta-btn {
-      background: #ffb84d;
-      color: #0f0f17;
-
-      &:hover {
-        background: #e6a93f;
-      }
-    }
-  }
+  font-family: 'Poppins', sans-serif;
+  // background: linear-gradient(120deg, #ffffff, #f5f5f5); /* Light background */
+  color: #222; /* Default text color */
 }
 
 .about-container {
@@ -76,13 +23,20 @@
   h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #6c63ff; /* Heading color */
   }
 
   p {
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 700px;
+    color: #ff6600; /* DIRECT paragraph color change */
   }
+}
+
+.highlight {
+  color: #6c63ff;
+  font-weight: 700;
 }
 
 .cta-btn {
@@ -93,8 +47,11 @@
   border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  background: #00c6ff; /* DIRECT button background color */
+  color: white; /* Button text color */
 
   &:hover {
+    background: #009ecf;
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
