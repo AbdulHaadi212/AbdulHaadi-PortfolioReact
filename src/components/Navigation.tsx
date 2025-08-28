@@ -17,7 +17,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import '../assets/styles/Navbar.scss';
 
-
 const drawerWidth = 240;
 const navItems = [
   ['Experience', 'timeline'],
@@ -35,9 +34,7 @@ const Navigation: React.FC<NavigationProps> = ({ mode, modeChange }) => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(prev => !prev);
-  };
+  const handleDrawerToggle = () => setMobileOpen(prev => !prev);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,8 +74,14 @@ const Navigation: React.FC<NavigationProps> = ({ mode, modeChange }) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
-        <Toolbar className='navigation-bar'>
+      <AppBar
+        component="nav"
+        id="navigation"
+        className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}
+        position="fixed"
+        elevation={0}   // remove shadow (white edge cause)
+      >
+        <Toolbar className="navigation-bar">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -88,11 +91,13 @@ const Navigation: React.FC<NavigationProps> = ({ mode, modeChange }) => {
           >
             <MenuIcon />
           </IconButton>
+
           {mode === 'dark' ? (
             <LightModeIcon onClick={modeChange} sx={{ cursor: 'pointer' }} />
           ) : (
             <DarkModeIcon onClick={modeChange} sx={{ cursor: 'pointer' }} />
           )}
+
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map(([label, id]) => (
               <Button key={label} onClick={() => scrollToSection(id)} sx={{ color: '#fff' }}>
@@ -102,6 +107,7 @@ const Navigation: React.FC<NavigationProps> = ({ mode, modeChange }) => {
           </Box>
         </Toolbar>
       </AppBar>
+
       <nav>
         <Drawer
           variant="temporary"
