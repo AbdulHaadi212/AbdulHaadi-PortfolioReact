@@ -10,6 +10,7 @@ $dark-bg: #0f0f17;
   color: $text-color;
   min-height: 100vh;
   padding-bottom: 2rem;
+  overflow-x: hidden; /* ✅ Prevents body from creating white line */
 }
 
 // Home Section
@@ -104,11 +105,20 @@ $dark-bg: #0f0f17;
   justify-content: center;
   align-items: center;
   gap: 20px; /* Space between images */
-  flex-wrap: nowrap; /* Prevent wrapping */
-  overflow-x: auto; /* Scroll if overflow */
+  flex-wrap: nowrap; /* ✅ Always one row */
+  overflow-x: auto; /* ✅ Scroll if overflow */
+  overflow-y: hidden;
   padding: 10px;
 
+  /* ✅ Hide scrollbar (still scrollable) */
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome/Safari */
+  }
+
   img {
+    flex: 0 0 auto; /* ✅ Prevent shrinking */
     width: 250px;
     height: 180px;
     object-fit: cover;
@@ -227,4 +237,3 @@ header {
     }
   }
 }
-
