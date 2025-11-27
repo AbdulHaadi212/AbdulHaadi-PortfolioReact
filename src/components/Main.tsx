@@ -24,6 +24,12 @@ import bgLight21 from "../assets/images/movie4.png";
 import bgLight22 from "../assets/images/Insta1.png";
 import bgLight23 from "../assets/images/Insta2.png";
 import bgLight24 from "../assets/images/Insta3.png";
+import bgLight25 from "../assets/images/Textile1.png";
+import bgLight26 from "../assets/images/Textile2.png";
+import bgLight27 from "../assets/images/Textile3.png";
+import bgLight28 from "../assets/images/Detector1.png";
+import bgLight29 from "../assets/images/Detector2.png";
+import bgLight30 from "../assets/images/Detector3.png";
 
 
 
@@ -67,6 +73,22 @@ const App: React.FC = () => {
               <img src={bgLight10} alt="Project Image 1" className="image-left" />
               <img src={bgLight11} alt="Project Image 2" className="image-center" />
               <img src={bgLight12} alt="Project Image 3" className="image-right" />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Multimedia Section 1 */}
+      <section id="multimedia">
+        <h2>Textile AI</h2>
+        <div className="media-container">
+          <div className="media-item">
+            <h3>Project Gallery</h3>
+            <div className="image-row">
+              <img src={bgLight25} alt="Project Image 1" className="image-left" />
+              <img src={bgLight26} alt="Project Image 2" className="image-center" />
+              <img src={bgLight27} alt="Project Image 3" className="image-right" />
             </div>
 
           </div>
@@ -131,6 +153,23 @@ const App: React.FC = () => {
               <img src={bgLight19} alt="Project Image 1" className="image-left" />
               <img src={bgLight20} alt="Project Image 2" className="image-center" />
               <img src={bgLight21} alt="Project Image 3" className="image-right" />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* Multimedia Section 1 */}
+      <section id="multimedia">
+        <h2>AI Smart Object Detection</h2>
+        <div className="media-container">
+          <div className="media-item">
+            <h3>Project Gallery</h3>
+            <div className="image-row">
+              <img src={bgLight28} alt="Project Image 1" className="image-left" />
+              <img src={bgLight29} alt="Project Image 2" className="image-center" />
+              <img src={bgLight30} alt="Project Image 3" className="image-right" />
             </div>
 
           </div>
